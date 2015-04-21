@@ -1,0 +1,1964 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Buffer Exercise</title>
+	<meta name="author" content="">
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src='/bootcamp/assets/js/jquery.hoverIntent.js'></script>
+  <script src='/bootcamp/assets/js/bootcamp.js'></script>  	
+	<link href='/bootcamp/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
+	<link href="http://feeds.feedburner.com/" rel="alternate" title="Buffer Exercise" type="application/atom+xml">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=League+Gothic:400,700" rel='stylesheet' type='text/css'>	
+  <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville" rel='stylesheet' type='text/css'>	
+  <link href="http://fonts.googleapis.com/css?family=Slabo+13px" rel='stylesheet' type='text/css'>	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="page-container">
+
+
+<!-- post (.md) content -->
+<div id="page" class="hentry">
+	<header class="the-header">
+		<div class="unit-head">
+			<div class="unit-inner unit-head-inner">
+				<p class="logo"><a href="/bootcamp/">Spatial Data Carpentry</a></p>
+				<nav class="nav-global">
+					<ul>
+            <li class="home"><a href="/bootcamp/index.html">Home</a></li>
+            <li class="bootcamp"><a href="/bootcamp/setup/qgis-install/">Lessons</a></li>
+            <li class="about"><a href="/bootcamp/about.html">About Us</a></li>
+					</ul>
+				</nav>
+			</div><!-- unit-inner -->
+		</div><!-- unit-head -->
+	</header>
+	<div class="body" role="main">
+		<div class="unit-body">
+			<div class="unit-inner unit-body-inner">
+				<div class="entry-content">
+					
+            <div class="dropdown-nav">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Table of Contents<span class="caret"></span></a>
+                <ul style="" class="dropdown-menu" role="menu">
+                 
+                  <h4 id="setup-ref">Setup</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/setup/qgis-install">Installing QGIS</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="know the basics-ref">Know the basics</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/vector">Vector Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/raster">Raster Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/projections">Reference Systems</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/qgis-intro">QGIS Overview</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="get the data-ref">Get the data</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/metadata">Metadata</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/sources">Data Sources</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="/bootcamp/get%20the%20data/qgis" class="active">Buffer Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="clean your data-ref">Clean your data</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/data-cleaning">Data Hygiene</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/formatting">Data Formatting</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/joining-census-data">Census Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="ask some questions-ref">Ask some questions</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/functions">Spatial Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/case-study">Landslide Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="show your results-ref">Show your results</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/fundamentals">Fundamentals</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/map-types">Map Types</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/cartography">Compose a map</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/web-mapping">Web Map Examples</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/leaflet">Leaflet Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                 
+                  <h4 id="more reading-ref">More reading</h4>
+                  <!-- add class="divider" to li in page list-->
+                  <ul>
+                      
+                    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/citations">Citations</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/grass-gis">GRASS GIS</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/scripts">Scripts</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/panoply">Panoply</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/tools">Tools</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/case-study">Landslide Susceptibility</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/consumable-services">Web Services</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/netcdf">Averaging Rainfall</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/range-modeling">Range Modeling</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/housing-data">Analyzing Housing value data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/vector-analysis">Vector Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/spatial-issues">Spatial Issues</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/census">Census Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/terrain">Terrain Data</a></li>
+      	
+      
+    
+  
+
+
+
+
+                  </ul>
+                
+                  </ul>
+                </li>
+
+              </ul>
+
+            </div><!-- dropdown nav -->
+<article class="unit-article layout-post">
+	<div class="unit-inner unit-article-inner">
+		<div class="content">
+			<header id="content-header">
+        <div id="header-overlay">
+				<div class="unit-head">
+					<div class="unit-inner unit-head-inner">
+            <h1 class="h2 entry-title">Buffer Exercise</h1> 
+            <!--            <h2 class="h2 entry-title">Supporting tagline</h2> -->
+
+
+
+					</div><!-- unit-inner -->
+				</div><!-- unit-head -->
+      </div>
+			</header>
+
+    
+      <!--
+      <div class="col-md-2 sticky-left-nav">
+ 
+  <h4 id="setup-ref">Setup</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/setup/qgis-install">Installing QGIS</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="know the basics-ref">Know the basics</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/vector">Vector Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/raster">Raster Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/projections">Reference Systems</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/qgis-intro">QGIS Overview</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="get the data-ref">Get the data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/metadata">Metadata</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/sources">Data Sources</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="/bootcamp/get%20the%20data/qgis" class="active">Buffer Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="clean your data-ref">Clean your data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/data-cleaning">Data Hygiene</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/formatting">Data Formatting</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/joining-census-data">Census Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="ask some questions-ref">Ask some questions</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/functions">Spatial Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/case-study">Landslide Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="show your results-ref">Show your results</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/fundamentals">Fundamentals</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/map-types">Map Types</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/cartography">Compose a map</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/web-mapping">Web Map Examples</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/leaflet">Leaflet Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="more reading-ref">More reading</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/citations">Citations</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/grass-gis">GRASS GIS</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/scripts">Scripts</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/panoply">Panoply</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/tools">Tools</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/case-study">Landslide Susceptibility</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/consumable-services">Web Services</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/netcdf">Averaging Rainfall</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/range-modeling">Range Modeling</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/housing-data">Analyzing Housing value data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/vector-analysis">Vector Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/spatial-issues">Spatial Issues</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/census">Census Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/terrain">Terrain Data</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+
+
+    </div>
+    -->
+			<div class="bd">
+
+        <!-- sticky left navigation -->
+<!--
+
+<div id="sticky-anchor" class="sticky-left-nav">
+  <div id="sticky" class="sticky-left-nav-inner">
+    <h3>Contents</h3>
+    
+   
+  <h4 id="setup-ref">Setup</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/setup/qgis-install">Installing QGIS</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="know the basics-ref">Know the basics</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/vector">Vector Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/raster">Raster Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/projections">Reference Systems</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/qgis-intro">QGIS Overview</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="get the data-ref">Get the data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/metadata">Metadata</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/sources">Data Sources</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="/bootcamp/get%20the%20data/qgis" class="active">Buffer Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="clean your data-ref">Clean your data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/data-cleaning">Data Hygiene</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/formatting">Data Formatting</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/joining-census-data">Census Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="ask some questions-ref">Ask some questions</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/functions">Spatial Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/case-study">Landslide Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="show your results-ref">Show your results</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/fundamentals">Fundamentals</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/map-types">Map Types</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/cartography">Compose a map</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/web-mapping">Web Map Examples</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/leaflet">Leaflet Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="more reading-ref">More reading</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/citations">Citations</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/grass-gis">GRASS GIS</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/scripts">Scripts</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/panoply">Panoply</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/tools">Tools</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/case-study">Landslide Susceptibility</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/consumable-services">Web Services</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/netcdf">Averaging Rainfall</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/range-modeling">Range Modeling</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/housing-data">Analyzing Housing value data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/vector-analysis">Vector Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/spatial-issues">Spatial Issues</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/census">Census Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/terrain">Terrain Data</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+
+  </div>  
+  <div class="clear"></div>
+</div> left-nav -->
+
+<div class="row main-content">
+<div class="nav-column">
+ <h3>Contents</h3>
+    
+   
+  <h4 id="setup-ref">Setup</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/setup/qgis-install">Installing QGIS</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="know the basics-ref">Know the basics</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/vector">Vector Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/raster">Raster Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/projections">Reference Systems</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/know%20the%20basics/qgis-intro">QGIS Overview</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="get the data-ref">Get the data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/metadata">Metadata</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/get%20the%20data/sources">Data Sources</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="/bootcamp/get%20the%20data/qgis" class="active">Buffer Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="clean your data-ref">Clean your data</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/data-cleaning">Data Hygiene</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/formatting">Data Formatting</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/clean%20your%20data/joining-census-data">Census Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="ask some questions-ref">Ask some questions</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/functions">Spatial Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/ask%20some%20questions/case-study">Landslide Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="show your results-ref">Show your results</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/overview">Overview</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/fundamentals">Fundamentals</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/map-types">Map Types</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/cartography">Compose a map</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/web-mapping">Web Map Examples</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/show%20your%20results/leaflet">Leaflet Exercise</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+ 
+  <h4 id="more reading-ref">More reading</h4>
+  <ul>
+      
+    
+
+
+
+
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/citations">Citations</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/grass-gis">GRASS GIS</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/scripts">Scripts</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/panoply">Panoply</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/tools">Tools</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/case-study">Landslide Susceptibility</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/consumable-services">Web Services</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/netcdf">Averaging Rainfall</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/range-modeling">Range Modeling</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/housing-data">Analyzing Housing value data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/vector-analysis">Vector Analysis</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/spatial-issues">Spatial Issues</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/census">Census Data</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/bootcamp/more%20reading/terrain">Terrain Data</a></li>
+      	
+      
+    
+  
+
+
+
+
+  </ul>
+
+</div>
+
+
+<div class="entry-content content content-container">
+  
+<h2 id="vector-analysis">Vector Analysis</h2>
+
+<h3 id="what-this-module-covers">What this module covers:</h3>
+
+<ul>
+  <li>Buffer polylines</li>
+  <li>Join census housing (home values) to census tracts (shapefile)</li>
+  <li>Intersecting vector layers</li>
+</ul>
+
+<h3 id="objective">Objective:</h3>
+
+<p>Quantify total home value at risk within landslide/mass-wasting and fautls.</p>
+
+<h3 id="data-collection-there-needs-to-be-instructionsquick-lesson-on-each-of-the-collection-sources">Data Collection: (there needs to be instructions/quick lesson on each of the collection sources)</h3>
+
+<ul>
+  <li><a href="http://factfinder.census.gov/faces/nav/jsf/pages/guided_search.xhtml" alt="Spatial Data Carpentry: Download Census housing data - American FactFinder" target="_blank">Census housing data - American FactFinder</a></li>
+  <li><a href="https://www.census.gov/geo/maps-data/data/tiger.html" alt="Spatial Data Carpentry: Download Census tract shapefile - TIGER data" target="_blank">Census tracts - TIGER Data</a></li>
+  <li><a href="http://earthquake.usgs.gov/hazards/qfaults" alt="Spatial Data Carpentry: Download USGS quaternary faults" target="_blank">Quaternary faults - USGS </a></li>
+  <li><a href="http://www.dnr.wa.gov/ResearchScience/Topics/GeosciencesData/Pages/gis_data.aspx" alt="Spatial Data Carpentry: Download seismogenic features" target="_blank">Washington seismogenic features - REQUIRES GDAL filegdb driver!</a></li>
+  <li>
+    <p><a href="http://nhd.usgs.gov/" alt="Spatial Data Carpentry: Download USGS National Hydrography Dataset - Washington" target="_blank">Washington streams/rivers - USGS National Hydrography Dataset</a></p>
+  </li>
+  <li>faults_100k - [source]</li>
+  <li><a href="/bootcamp/assets/data/housing-data.zip">housing-data.zip</a></li>
+</ul>
+
+<h3 id="data-wrangling">Data Wrangling:</h3>
+
+<h4 id="wrangle-census-data">Wrangle Census Data:</h4>
+
+<p>Luckily, the Census data has already been wrangled. Census data can sometimes be tricky.</p>
+
+<h4 id="high-risk-rules">High-risk rules:</h4>
+
+<ul>
+  <li>within 100m of fault lines</li>
+  <li>within 50m of rivers/streams</li>
+  <li>within soft geologic areas</li>
+</ul>
+
+<ol>
+  <li>Open QGIS and configure project workspace.</li>
+  <li>Import data:
+    <ul>
+      <li>HINT: The project projection will default to the first layer that is added to the project (See lower right of image below: EPSG:2927).</li>
+      <li><em>Add Vector Layer: </em><img src="/bootcamp/assets/images/qgis/add-vector.png" alt="Spatial Data Carpentry: Vector Analysis - add vector data" /><br /><strong>fault_100k.shp</strong><br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-3.png" alt="Spatial Data Carpentry: Vector Analysis - streams and faults" /></li>
+    </ul>
+  </li>
+  <li>Buffer fault lines to 100m:
+    <ul>
+      <li><em>Menu Bar &gt; Vector &gt; Geoprocessing Tools &gt; Buffer(s)</em></li>
+      <li>Configure inputs as follows:<br /><strong>Input vector layer: fault_100k<br />Buffer distance: 100<br />Output shapefile: fault_buffer_100m.shp<br />Add results to canvas: (Checked)<br />Click OK to perform analysis, Close to exit the tool</strong><br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-4.png" alt="Spatial Data Carpentry: Vector Analysis - buffer analysis" /></li>
+      <li><em>Zoom in to a buffer, close enough to see the width</em></li>
+      <li><em>Open the meaure tool</em> <img src="/bootcamp/assets/images/qgis/measure-tool.png" alt="Spatial Data Carpentry: Vector Analysis - measure tool" /></li>
+      <li><em>Measure the width of the buffer.</em> Notice how the total width is only about 62 meters, or 100 feet. Current map units are determined by the CRS, in this case EPSG:2927 is in US feet and we need meters. Simply changing the CRS in Project Properties does not give us the correct results- this is still measured from EPSG:2927 US feet.<br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-measure-tool-2.png" alt="Spatial Data Carpentry: Vector Analysis - measure buffer" /><br /><br /><strong>Important:</strong><br />There are two methods to perfoming a buffer analysis on our shapefile. The problem here is that our CRS is EPSG:2927 (in US feet) and the buffer distance is based on map units (still US feet). The two methods are: convert 100 meters to US feet and use this value in the buffer analysis while maintaining EPSG:2927 (in US feet); OR, reproject the layer thus creating a new file with a CRS in meters (correct map units), and then reprojecting back to EPSG:2927. We’ll go with the former.<br /><br /></li>
+    </ul>
+  </li>
+  <li>Now we need to perform the buffer analysis with the correct method. <em>Remove the incorrect buffer layer: fault_buffer_100m.shp</em></li>
+  <li><em>Add Vector Layer: </em><img src="/bootcamp/assets/images/qgis/add-vector.png" alt="Spatial Data Carpentry: Vector Analysis - add vector" />
+    <ul>
+      <li><strong>NHD_MajorStreams.shp<br /></strong>
+  <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-5.png" alt="Spatial Data Carpentry: Vector Analysis - add vector data" /></li>
+    </ul>
+  </li>
+  <li>Open the buffer tool:
+    <ul>
+      <li><em>Menu Bar &gt; Vector &gt; Geoprocessing Tools &gt; Buffer(s)</em></li>
+    </ul>
+  </li>
+  <li><em>Buffer fault_100k:</em>
+    <ul>
+      <li>Configure inputs as follow:<br /><strong>Input vector layer: fault_100k<br />Buffer distance: 328<br />Output shapefile: fault_buffer_100m.shp<br />Add result to canvas: (Checked)<br />Click OK to run (overwrite necessary), and CLOSE to exit tool</strong><br /><br /><strong>Reminder:</strong><br />Buffer distance = 100 meters * 3.28084 feet = 328.084 feet<br /> 1 meter = 3.28084 feet<br /><br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-6.png" alt="Spatial Data Carpentry: Vector Analysis - buffer vector" /></li>
+    </ul>
+  </li>
+  <li>Confirm 100 meter buffer on faults:
+    <ul>
+      <li>Open measure tool <img src="/bootcamp/assets/images/qgis/measure-tool.png" alt="Spatial Data Carpentry: Vector Analysis - measure tool" /> and confirm 200 meter total width (100 meters * 2 = 200 meters)<br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-7.png" alt="Spatial Data Carpentry: Vector Analysis - measure faults buffer" /></li>
+    </ul>
+  </li>
+  <li><em>Repeat buffer with NHD_MajorStreams.shp</em>
+    <ul>
+      <li>Configure inputs as follows:<br /><strong>Input vector layer: NHD_MajorStreams<br />Buffer distance: 164<br />Output shapefile: streams_buffer_50m.shp<br />Add result to canvas: (Checked)<br />Click OK to run, CLOSE to exit tool</strong><br /><br /><strong>Reminder:</strong><br />Buffer distance = 50 meters * 3.28084 feet = 164.052 feet<br /> 1 meter = 3.28084 feet<br /><br />
+   <img src="/bootcamp/assets/images/vector-analysis/vector-analysis-8.png" alt="Spatial Data Carpentry: Vector Analysis - buffer streams" /></li>
+    </ul>
+  </li>
+  <li>Confirm 50 meter buffer on streams.</li>
+</ol>
+
+<p>References:</p>
+
+
+</div>
+</div>
+          <!--
+					<div class="meta">
+						<p class="date-publish">
+							Published: 
+							<date class="date-pub" title="2001-01-01T00:00:00-07:00" datetime="2001-01-01T00:00:00-07:00" pubdate>
+							<span class="month"><abbr>January</abbr></span>
+							<span class="day">01</span>
+							<span class="year">2001</span>
+							</date>
+						</p>
+						<ul class="list-category list-linear">
+							<li class="list-head">category: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/categories.html#get the data-ref">
+    		get the data <span>4</span>
+    	</a></li>
+    
+  
+
+
+						</ul>
+						<ul class="list-tag list-linear">
+							<li class="list-head">tags: </li>
+							
+							
+
+
+  
+     
+    	<li><a href="/tags.html#applications-ref">applications <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#qgis-ref">qgis <span>4</span></a></li>
+     
+    	<li><a href="/tags.html#quantumgis-ref">quantumgis <span>3</span></a></li>
+    
+  
+
+
+
+						</ul>
+					</div>
+          meta -->
+
+
+				</div><!-- entry-content -->
+				<div class="misc-content">
+					<div class="social">
+						<ul class="list-linear">
+							<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="" data-lang="en">Tweet</a></div></li>
+							<li><div class="twitter-follow"><a href="https://twitter.com/" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>
+						</ul>
+					</div>
+					
+					
+				</div><!-- misc-content -->
+				
+			</div><!-- bd -->
+			<footer class="unit-foot">
+				<div class="unit-inner unit-foot-inner">
+					<nav class="pagination">
+						<ul>
+							
+              <li class="prev"><a class="internal" rel="prev"  href="/bootcamp/get%20the%20data/sources" title="View Data Sources">&laquo; Data Sources</a></li>
+							
+							
+							<li class="pipe"> | </li>
+							
+							
+              <li class="next"><a class="internal" rel="next"  href="/bootcamp/know%20the%20basics/overview" title="View Overview">Overview &raquo;</a></li>
+							
+						</ul>
+					</nav>
+					<p class="gotop">
+						<a href="#page">Back to Top</a>
+					</p>
+				</div>
+			</footer>
+
+		</div><!-- content -->
+	</div><!-- unit-inner -->
+</article>
+
+
+				</div>
+			</div><!-- unit-inner -->
+		</div><!-- unit-body -->
+	</div><!-- body -->
+	<footer class="the-footer">
+		<div class="unit-foot">
+			<div class="unit-inner unit-foot-inner">
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Nathan Casler</span> - <span class="fn email">ncasler@email.arizona.edu</span></address></li>
+            <li class="contact"><address><span class="author fn n">Daniel Guaderrama</span> - <span class="fn email">dguaderrama@email.arizona.edu</span></address></li>
+
+            <!--						<li class="github"><a href="http://github.com//" rel="me">github.com/</a></li>
+						<li class="twitter"><a href="http://twitter.com//" rel="me">twitter.com/</a></li>
+            <li class="rss"><a href="http://feeds.feedburner.com/">Subscribe to RSS Feed</a></li>-->
+					</ul>
+				</div><!-- misc -->
+				<p class="licence">
+        <!--Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.-->
+				</p>
+			</div><!-- unit-foot-inner -->
+		</div><!-- unit-foot -->
+	</footer>
+</div><!-- page -->
+</div><!-- page-container -->
+<script>
+	(function(d, s) {
+		var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.src = url; js.id = id;
+		fjs.parentNode.insertBefore(js, fjs);
+		};
+	load('//platform.twitter.com/widgets.js', 'tweetjs');
+	// load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
+	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/get%20the%20data/qgis" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+	}(document, 'script'));
+</script>
+<script>
+/*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
+(function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);
+</script>
+
+  
+</body>
+</html>
+
+
