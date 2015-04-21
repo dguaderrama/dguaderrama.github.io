@@ -530,7 +530,7 @@ pre {
 --------------------------------------------------------------------------------- */
 /* this is for the header with background images */
 .unit-article header {
-  background: url('/assets/themes/the-minimum/skin/100-90-5-monochrome.png');
+  background: url('assets/themes/the-minimum/skin/100-90-5-monochrome.png');
   background-repeat: repeat;
   background-position: 0 0;
   background-color: #015697;
